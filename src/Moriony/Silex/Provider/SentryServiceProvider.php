@@ -1,8 +1,8 @@
 <?php
 namespace Moriony\Silex\Provider;
 
-use Silex\Application;
-use Silex\ServiceProviderInterface;
+use Pimple\Container;
+use Pimple\ServiceProviderInterface;
 
 class SentryServiceProvider implements ServiceProviderInterface
 {
@@ -19,27 +19,21 @@ class SentryServiceProvider implements ServiceProviderInterface
     );
 
     /**
-     * @param Application $app An Application instance
+     * @param Container $container An Container instance
      */
-    public function register(Application $app)
+    public function register(Container $container)
     {
         $defaultOptions = self::$defaultOptions;
 
-        $app[self::SENTRY] = $app->share(function () use($app, $defaultOptions) {
-            $options = array_merge($defaultOptions, $app[SentryServiceProvider::SENTRY_OPTIONS]);
+        $container[self::SENTRY] = function () use ($container, $defaultOptions) {
+            $options = array_merge($defaultOptions, $container[SentryServiceProvider::SENTRY_OPTIONS]);
             return new \Raven_Client($options[SentryServiceProvider::OPT_DSN], $options);
-        });
+        };
 
-        $app[self::SENTRY_ERROR_HANDLER] = $app->share(function() use($app, $defaultOptions) {
-            $options = array_merge($defaultOptions, $app[SentryServiceProvider::SENTRY_OPTIONS]);
-            return new \Raven_ErrorHandler($app[SentryServiceProvider::SENTRY],
+        $container[self::SENTRY_ERROR_HANDLER] = function() use ($container, $defaultOptions) {
+            $options = array_merge($defaultOptions, $container[SentryServiceProvider::SENTRY_OPTIONS]);
+            return new \Raven_ErrorHandler($container[SentryServiceProvider::SENTRY],
                                            $options[SentryServiceProvider::OPT_SEND_ERRORS_LAST]);
-        });
+        };
     }
-
-    /**
-     * @param Application $app
-     */
-    public function boot(Application $app)
-    {}
 }
