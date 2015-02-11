@@ -1,6 +1,6 @@
 # Silex Sentry Provider
 
-[![Build Status](https://travis-ci.org/moriony/silex-sentry-provider.png?branch=master)](https://travis-ci.org/moriony/silex-sentry-provider) [![Coverage Status](https://coveralls.io/repos/moriony/silex-sentry-provider/badge.png)](https://coveralls.io/r/moriony/silex-sentry-provider) [![Dependency Status](https://www.versioneye.com/user/projects/51bf5dd3f721e5000200104f/badge.png)](https://www.versioneye.com/user/projects/51bf5dd3f721e5000200104f)
+[![Build Status](https://travis-ci.org/bthemad/silex-sentry-provider.png?branch=master)](https://travis-ci.org/moriony/silex-sentry-provider) [![Coverage Status](https://coveralls.io/repos/bthemad/silex-sentry-provider/badge.png)](https://coveralls.io/r/bthemad/silex-sentry-provider) [![Dependency Status](https://www.versioneye.com/user/projects/54db8308c1bbbda0130002ef/badge.png)](https://www.versioneye.com/user/projects/51bf5dd3f721e5000200104f)
 
 [Sentry client](https://github.com/getsentry/raven-php) service provider for the [Silex](http://silex.sensiolabs.org/) framwork.
 
