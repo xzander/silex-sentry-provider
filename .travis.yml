@@ -11,4 +11,4 @@ after_script:
   - php vendor/bin/coveralls
 
 notifications:
-  email: "demateus@gmail.com"
+  email: "alex.kudryashov@gmail.com"
