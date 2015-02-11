@@ -4,7 +4,7 @@
 
 [Sentry client](https://github.com/getsentry/raven-php) service provider for the [Silex](http://silex.sensiolabs.org/) framwork.
 
-**Warning:** This version is compatible with Silex 2.0 and Pimple 3.0 only! For the older version use the original repo. 
+**Warning:** This version is compatible with Silex 2.0 and Pimple 3.0 only! For the older version use the original [repo](https://github.com/moriony/silex-sentry-provider). 
 
 ## Install via composer
 
