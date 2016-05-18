@@ -11,9 +11,15 @@
 Add in your ```composer.json``` the require entry for this library.
 ```json
 {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/xzander/silex-sentry-provider"
+        }
+    ],
     "require": {
         "moriony/silex-sentry-provider": "2.0.*"
-    }
+    },
 }
 ```
 and run ```composer install``` (or ```update```) to download all files.
